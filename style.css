@@ -1,0 +1,295 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: white;
+
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+    background-color: rgb(0, 0, 0);
+    scroll-behavior: smooth;
+}
+
+/* The Home page  */
+
+#intro{
+    background-image: url("images/bg.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    
+}
+
+#profilePicture{
+    margin-bottom: 30px;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 2px solid white;
+    
+}
+
+h2{
+    margin: 50px 0px 0px 0px ;
+    font-family: "Playwrite AU QLD", cursive;
+}
+
+h1{
+    text-align: center;
+    font-size: 2.5em;
+    font-family: "Staatliches" , sans-serif;
+    letter-spacing: 0.1em;
+}
+
+.headingIntro{
+  text-align: center; 
+  margin: 0 10%
+}
+
+#skillText {
+  font-size: 1.5rem;
+  font-family: 'Orbitron', sans-serif; /* optional, glitchy vibe */
+  color: #0ff;
+  position: relative;
+  text-align: center;
+  padding: 20px;
+  overflow: hidden;
+  font-weight: 900;
+}
+
+
+.glitch {
+  position: relative;
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  color: white;
+  background: black;
+  overflow: hidden;
+  clip: rect(0, 900px, 0, 0);
+}
+
+.glitch::before {
+  left: 2px;
+  text-shadow: -2px 0 red;
+  animation: glitchTop 2s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+  left: -2px;
+  text-shadow: -2px 0 blue;
+  animation: glitchBottom 2s infinite linear alternate-reverse;
+}
+
+@keyframes glitchTop {
+  0% {
+    clip: rect(0, 9999px, 0, 0);
+  }
+  10% {
+    clip: rect(10px, 9999px, 50px, 0);
+  }
+  20% {
+    clip: rect(85px, 9999px, 140px, 0);
+  }
+  30% {
+    clip: rect(20px, 9999px, 30px, 0);
+  }
+  100% {
+    clip: rect(0, 9999px, 0, 0);
+  }
+}
+
+@keyframes glitchBottom {
+  0% {
+    clip: rect(0, 9999px, 0, 0);
+  }
+  10% {
+    clip: rect(65px, 9999px, 85px, 0);
+  }
+  20% {
+    clip: rect(45px, 9999px, 65px, 0);
+  }
+  30% {
+    clip: rect(90px, 9999px, 100px, 0);
+  }
+  100% {
+    clip: rect(0, 9999px, 0, 0);
+  }
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.hire-btn {
+  background: linear-gradient(135deg, #0ff, #00aaff);
+  color: #000;
+}
+
+.hire-btn:hover {
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+  transform: translateY(-3px);
+}
+
+.work-btn {
+  background: transparent;
+  color: #0ff;
+  border: 2px solid #0ff;
+}
+
+.work-btn:hover {
+  background: rgba(0, 255, 255, 0.1);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+  transform: translateY(-3px);
+}
+
+
+/* About Me Section */
+
+#aboutMe {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 40px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#aboutMe>img{
+  object-fit: contain;
+  width: 50vh;
+  height: 50vh;
+  border-radius : 50% 50% 0 0;
+}
+/* The Skills Section */
+
+.heading {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 20px 0;
+  font-family: "Staatliches", sans-serif;
+}
+#skills {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 40px 20px;
+  background: #0d0d0d;
+}
+
+.skill-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 20px;
+  width: 280px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+}
+
+.skill-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+}
+
+.skill-card img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.skill-card h3 {
+  color: #0ff;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.skill-card p {
+  color: #ccc;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* Contac Section */
+
+.contact-section {
+  text-align: center;
+  padding: 40px 20px;
+  background: #111;
+  color: #fff;
+}
+
+.contact-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.contact-section p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-links a {
+  font-size: 1.5rem;
+  color: #0ff;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #fff;
+  transform: scale(1.2);
+}
+
+footer {
+  background: #000;
+  color: #888;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 0.9rem;
+  margin-top: 20px;
+}
