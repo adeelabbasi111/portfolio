@@ -14,3 +14,5 @@ function updateSkill() {
 
 // Change skill every 500ms
 setInterval(updateSkill, 500);
+
+ 
