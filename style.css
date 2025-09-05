@@ -212,6 +212,10 @@ h1{
   background: #0d0d0d;
 }
 
+a{
+  text-decoration: none;
+}
+
 .skill-card {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(8px);
