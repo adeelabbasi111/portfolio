@@ -1,137 +1,150 @@
-*{
-    margin: 0;
-    padding: 0;
-    color: white;
-
+/* CSS Variables for a consistent and easily customizable theme */
+:root {
+  --bg-dark: #0a0a0a;
+  --bg-medium: #1a1a1a;
+  --border-color: #2a2a2a;
+  --text-light: #f0f0f0;
+  --text-muted: #888;
+  --accent-primary: #00A8F3; 
+  /* --accent-primary: #9d6fff; A color inspired by Premiere Pro's UI */
+  --accent-secondary: #F50057;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    font-family: "Poppins", sans-serif;
-    overflow-x: hidden;
-    background-color: rgb(0, 0, 0);
-    scroll-behavior: smooth;
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  line-height: 1.7;
+  scroll-behavior: smooth;
 }
 
 /* The Home page  */
 
-#intro{
-    background-image: url("images/bg.jpg");
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    height: 100vh;
-    flex-direction: column;
-    align-items: center;
-    justify-content:center;
-    
-}
-
-#profilePicture{
-    margin-bottom: 30px;
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    border: 2px solid white;
-    
-}
-
-h2{
-    margin: 50px 0px 0px 0px ;
-    font-family: "Playwrite AU QLD", cursive;
-}
-
-h1{
-    text-align: center;
-    font-size: 2.5em;
-    font-family: "Staatliches" , sans-serif;
-    letter-spacing: 0.1em;
-}
-
-.headingIntro{
-  text-align: center; 
-  margin: 0 10%
-}
-
-#skillText {
-  font-size: 1.5rem;
-  font-family: 'Orbitron', sans-serif; /* optional, glitchy vibe */
-  color: #0ff;
-  position: relative;
-  text-align: center;
+#intro {
+  background-image: url("images/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative; /* Needed for the overlay */
+  display: flex;
+  min-height: 100vh; /* Use min-height to be more flexible */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 20px;
-  overflow: hidden;
-  font-weight: 900;
+  text-align: center;
 }
 
+/* ADDED: Dark overlay for better text readability */
+#intro::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 10, 10, 0.7); /* Dark semi-transparent overlay */
+  z-index: 1;
+}
+
+/* Ensure all content is above the overlay */
+#intro > * {
+  z-index: 2;
+}
+
+#profilePicture {
+  margin-bottom: 20px;
+  width: 200px; /* Slightly smaller for better balance */
+  height: 200px;
+  border-radius: 50%;
+  border: 2px solid var(--border-color); /* Use accent color for pop */
+  /* box-shadow: 0 0 25px var(--accent-primary); */
+}
 
 .glitch {
+  font-size: 3.5rem; /* Adjusted size */
+  font-weight: 700;
   position: relative;
-  color: white;
-  font-size: 3rem;
-  font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 0.1em;
+  color: var(--text-light);
+  animation: glitch-skew 1s infinite linear alternate-reverse;
+  margin-bottom: 1rem;
 }
 
+/* Glitch animations remain the same, they are great! */
 .glitch::before,
 .glitch::after {
   content: attr(data-text);
   position: absolute;
-  left: 0;
   top: 0;
+  left: 0;
   width: 100%;
-  color: white;
-  background: black;
+  height: 100%;
+  background: transparent; /* Changed from --bg-dark to transparent to work with overlay */
   overflow: hidden;
-  clip: rect(0, 900px, 0, 0);
 }
-
 .glitch::before {
   left: 2px;
-  text-shadow: -2px 0 red;
-  animation: glitchTop 2s infinite linear alternate-reverse;
+  text-shadow: -2px 0 var(--accent-primary);
+  clip: rect(44px, 450px, 56px, 0);
+  animation: glitch-anim 5s infinite linear alternate-reverse;
 }
-
 .glitch::after {
   left: -2px;
-  text-shadow: -2px 0 blue;
-  animation: glitchBottom 2s infinite linear alternate-reverse;
+  text-shadow: -2px 0 var(--accent-secondary), 2px 2px var(--accent-primary);
+  clip: rect(85px, 450px, 90px, 0);
+  animation: glitch-anim2 3s infinite linear alternate-reverse;
 }
 
-@keyframes glitchTop {
-  0% {
-    clip: rect(0, 9999px, 0, 0);
-  }
-  10% {
-    clip: rect(10px, 9999px, 50px, 0);
-  }
-  20% {
-    clip: rect(85px, 9999px, 140px, 0);
-  }
-  30% {
-    clip: rect(20px, 9999px, 30px, 0);
-  }
-  100% {
-    clip: rect(0, 9999px, 0, 0);
-  }
+/* Keyframes for glitch are unchanged */
+@keyframes glitch-skew {
+  1% { transform: skewX(5deg); }
+  2% { transform: skewX(0); }
+}
+@keyframes glitch-anim {
+  0% { clip: rect(42px, 9999px, 44px, 0); } 5% { clip: rect(12px, 9999px, 60px, 0); } 10% { clip: rect(40px, 9999px, 45px, 0); } 15% { clip: rect(30px, 9999px, 80px, 0); } 20% { clip: rect(25px, 9999px, 70px, 0); } 25% { clip: rect(50px, 9999px, 55px, 0); } 30% { clip: rect(70px, 9999px, 65px, 0); } 35% { clip: rect(35px, 9999px, 80px, 0); } 40% { clip: rect(40px, 9999px, 45px, 0); } 45% { clip: rect(65px, 9999px, 70px, 0); } 50% { clip: rect(20px, 9999px, 75px, 0); } 55% { clip: rect(80px, 9999px, 90px, 0); } 60% { clip: rect(60px, 9999px, 65px, 0); } 65% { clip: rect(30px, 9999px, 40px, 0); } 70% { clip: rect(55px, 9999px, 60px, 0); } 75% { clip: rect(25px, 9999px, 35px, 0); } 80% { clip: rect(45px, 9999px, 50px, 0); } 85% { clip: rect(75px, 9999px, 85px, 0); } 90% { clip: rect(40px, 9999px, 55px, 0); } 95% { clip: rect(60px, 9999px, 70px, 0); } 100% { clip: rect(25px, 9999px, 30px, 0); }
+}
+@keyframes glitch-anim2 {
+  0% { clip: rect(79px, 9999px, 36px, 0); } 5% { clip: rect(32px, 9999px, 51px, 0); } 10% { clip: rect(52px, 9999px, 71px, 0); } 15% { clip: rect(83px, 9999px, 52px, 0); } 20% { clip: rect(50px, 9999px, 1px, 0); } 25% { clip: rect(48px, 9999px, 92px, 0); } 30% { clip: rect(8px, 9999px, 43px, 0); } 35% { clip: rect(48px, 9999px, 73px, 0); } 40% { clip: rect(79px, 9999px, 40px, 0); } 45% { clip: rect(10px, 9999px, 88px, 0); } 50% { clip: rect(13px, 9999px, 82px, 0); } 55% { clip: rect(72px, 9999px, 48px, 0); } 60% { clip: rect(31px, 9999px, 98px, 0); } 65% { clip: rect(3px, 9999px, 12px, 0); } 70% { clip: rect(65px, 9999px, 74px, 0); } 75% { clip: rect(14px, 9999px, 40px, 0); } 80% { clip: rect(89px, 9999px, 38px, 0); } 85% { clip: rect(50px, 9999px, 85px, 0); } 90% { clip: rect(1px, 9999px, 45px, 0); } 95% { clip: rect(81px, 9999px, 100px, 0); } 100% { clip: rect(54px, 9999px, 85px, 0); }
 }
 
-@keyframes glitchBottom {
-  0% {
-    clip: rect(0, 9999px, 0, 0);
-  }
-  10% {
-    clip: rect(65px, 9999px, 85px, 0);
-  }
-  20% {
-    clip: rect(45px, 9999px, 65px, 0);
-  }
-  30% {
-    clip: rect(90px, 9999px, 100px, 0);
-  }
-  100% {
-    clip: rect(0, 9999px, 0, 0);
-  }
+/* REWORKED: Description section for better flow */
+#description {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px; /* Adds space between "I AM A" and the skill */
+  margin-bottom: 30px;
+  width: auto; /* Removed fixed width */
+}
+
+#description h2 {
+  font-size: 1.5rem; /* Adjusted for balance */
+  margin: 0;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  color: var(--text-muted);
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  white-space: nowrap; /* Prevents wrapping */
+}
+
+#skillText {
+  width: auto; /* Allow width to be flexible */
+  height: auto; /* Allow height to be flexible */
+  font-size: 1.8rem;
+  font-family: "Orbitron", sans-serif;
+  color: var(--accent-primary);
+  text-shadow: 0 0 10px var(--accent-primary);
+  padding: 0;
+  font-weight: 900;
 }
 
 .hero-buttons {
@@ -139,161 +152,400 @@ h1{
   gap: 15px;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .btn {
-  padding: 12px 24px;
+  padding: 12px 28px;
   font-size: 1rem;
   border-radius: 30px;
   font-weight: bold;
   text-decoration: none;
   transition: all 0.3s ease;
+  border: 2px solid transparent;
 }
 
 .hire-btn {
-  background: linear-gradient(135deg, #0ff, #00aaff);
-  color: #000;
+  background: var(--accent-primary);
+  color: #fff;
 }
 
 .hire-btn:hover {
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+  background: transparent;
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
   transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(157, 111, 255, 0.4);
 }
 
 .work-btn {
   background: transparent;
-  color: #0ff;
-  border: 2px solid #0ff;
+  color: var(--text-light);
+  border: 2px solid var(--border-color);
 }
 
 .work-btn:hover {
-  background: rgba(0, 255, 255, 0.1);
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+  border-color: var(--text-light);
   transform: translateY(-3px);
 }
 
-
-/* About Me Section */
-
+/* REWORKED: About Me Section */
 #aboutMe {
-  height: 90vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
-  padding: 40px 20px;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(8px);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  justify-content: center;
+  min-height: 80vh; /* Changed from height:100vh for flexibility */
+  padding: 5rem 2rem; /* Added padding */
+  border-bottom: 2px solid var(--border-color);
+}
+.about-container {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  gap: 4rem;
+  max-width: 1000px;
+  width: 100%;
+}
+.about-image {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px; /* Softer, modern border radius */
+  border: 2px solid var(--border-color);
+}
+.about-text {
+  max-width: 400px;
 }
 
-#aboutMe>img{
-  object-fit: contain;
-  width: 50vh;
-  height: 50vh;
-  border-radius : 50% 50% 0 0;
+.about-text h2 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+  color: var(--accent-primary);
 }
-/* The Skills Section */
 
-.heading {
+.about-text p {
+  color: var(--text-muted);
+  font-weight: 600;
+  text-align: left;
+  line-height: 1.8;
+}
+
+/* NEW: Education Section Styling */
+#education {
+  padding: 5rem 2rem;
+  background-color: var(--bg-dark); /* Ensure consistency */
+  border-bottom: 2px solid var(--border-color);
+}
+
+#education h2 {
   text-align: center;
   font-size: 2.5rem;
-  margin: 20px 0;
-  font-family: "Staatliches", sans-serif;
+  font-weight: 900;
+  margin-bottom: 3rem;
+  color: var(--accent-primary);
 }
-#skills {
+
+.education-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column on mobile */
+  gap: 3rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.education-item {
+  background-color: var(--bg-medium);
+  padding: 2.5rem;
+  border-radius: 15px;
+  border-left: 5px solid var(--accent-primary);
+  box-shadow: 0 8px 25px var(--shadow-color);
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 2rem;
-  padding: 40px 20px;
-  background: #0d0d0d;
+  align-items: flex-start;
+  gap: 25px;
+  position: relative;
+  overflow: hidden;
+  opacity: 0; /* Hidden for animation */
+  transform: translateX(0); /* Reset for animation */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.education-item.animate-from-left {
+    transform: translateX(-100px); /* Start off-screen left */
+}
+
+.education-item.animate-from-right {
+    transform: translateX(100px); /* Start off-screen right */
+}
+
+/* Animation trigger class for JS */
+.education-item.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+.education-icon {
+  font-size: 2.5rem;
+  color: var(--text-muted); /* Using secondary accent for icons */
+  min-width: 40px; /* Ensure icon doesn't shrink */
+  line-height: 1; /* Aligns icon better */
+}
+
+.education-details h3 {
+  font-size: 1.5rem;
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+}
+
+.education-details .institution {
+  font-size: 1.1rem;
+  color: var(--accent-primary);
+  margin-bottom: 0.3rem;
+  text-align: left;
+}
+
+.education-details .duration {
+  text-align: left;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.education-details .description {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: var(--text-light);
+  max-width: 550px;
+}
+
+
+
+
+/* The Skills Section (largely unchanged, it's great!) */
+#skills {
+  padding-top: 2rem; /* Added padding to give it space */
+}
+.container{
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 0;
+}
+.container h2{
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+  color: var(--accent-primary);
+}
+.container p{
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 3rem;
+  color: var(--text-muted);
+}
+.skill-container{
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+/*Vertical line in the corners */
+.skill-container::after{
+  margin-top: 30px;
+  content:"";
+  position: absolute;
+  width: 4px;
+  background-color: var(--border-color);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  z-index: -1;
+  height:0;
+  animation: draw-line 10s forwards ease-out;
+  animation-play-state: var(--animation-play-state, paused);
+} /* Controlled by JS */
+@keyframes draw-line {
+  from { height: 0; }
+  to { height: 95%; }
+}
+
+.skill-item{
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+  opacity: 0; /* Hidden for scroll animation */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.skill-item.left {
+  left: 0;
+  transform: translateX(-30px);
+}
+.skill-item.right {
+  left: 50%;
+  transform: translateX(30px);
+}
+.skill-item.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* For the aesthetic circles */
+.skill-item::after{
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: -15px;
+  background-color: var(--bg-dark);
+  border: 4px solid var(--accent-primary);
+  margin: 0px;
+  z-index: 2;
+  top: 25px;
+  border-radius: 50%;
+}
+
+.right::after{
+  left: -12px;
 }
 
 a{
   text-decoration: none;
+  color: inherit;
 }
-
-.skill-card {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  padding: 20px;
-  width: 280px;
-  text-align: center;
+.skill {
+  padding: 20px 30px;
+  background-color: var(--bg-medium);
+  position: relative;
+  border-radius: 8px;
+  border-left: 3px solid var(--accent-primary);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
 }
 
-.skill-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+.skill:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
 }
 
-.skill-card img {
-  width: 150px;
-  height: 150px;
-  object-fit: contain;
-  margin-bottom: 15px;
-}
-
-.skill-card h3 {
-  color: #0ff;
-  font-size: 1.3rem;
+.skill-item img{
+  width: 100px;
+  height: 100px;
+  justify-self: center;
+  object-fit: cover;
   margin-bottom: 10px;
+  border-radius: 8px;
 }
 
-.skill-card p {
-  color: #ccc;
-  font-size: 0.95rem;
-  line-height: 1.4;
+.skill h3 {
+  font-size: 1.3rem;
+  color: var(--text-light);
+}
+.skill p {
+  color: var(--text-muted);
+  text-align: left;
 }
 
-/* Contac Section */
 
+/* Contact Section */
 .contact-section {
   text-align: center;
-  padding: 40px 20px;
-  background: #111;
-  color: #fff;
+  padding: 4rem 20px;
+  background: var(--bg-medium); /* Slightly different background for separation */
+  color: var(--text-light);
 }
 
 .contact-section h2 {
-  font-size: 1.8rem;
+  font-size: 2.5rem;
   margin-bottom: 10px;
+  color: var(--accent-primary);
 }
 
 .contact-section p {
-  font-size: 1rem;
-  margin-bottom: 20px;
-  color: #ccc;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: var(--text-muted);
 }
 
 .social-links {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 25px;
 }
 
 .social-links a {
-  font-size: 1.5rem;
-  color: #0ff;
+  font-size: 2rem; /* Larger icons */
+  color: var(--text-muted);
   transition: all 0.3s ease;
 }
 
 .social-links a:hover {
-  color: #fff;
-  transform: scale(1.2);
+  color: var(--accent-primary);
+  transform: scale(1.2) translateY(-5px);
 }
 
 footer {
-  background: #000;
-  color: #888;
+  background: var(--bg-dark);
+  color: var(--text-muted);
   text-align: center;
-  padding: 15px 0;
+  padding: 20px 0;
   font-size: 0.9rem;
-  margin-top: 20px;
+  border-top: 1px solid var(--border-color);
+}
+
+/* For Phones */
+@media (max-width: 768px) {
+  .glitch {
+    font-size: 2.5rem; /* Reduced font size for mobile */
+  }
+
+  #description {
+    flex-direction: column; /* Stack "I AM A" and skill vertically */
+    gap: 5px;
+  }
+  
+  /* REWORKED: About Me for mobile */
+  .about-container {
+    flex-direction: column; /* Stack image and text vertically */
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+  }
+  .about-text p {
+      text-align: center;
+  }
+  
+  .skill-container::after {
+    left: 20px;
+  }
+  .skill-item {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+   .skill-item.left,
+  .skill-item.right {
+     left: 0; 
+   }  
+  .skill-item::after {
+    left: 10px;
+  }
+   /* Education section for mobile */
+  .education-item {
+    padding: 1.5rem;
+    flex-direction: column; /* Stack icon and text vertically */
+    align-items: left;
+    text-align: left;
+    border-left: none; /* Remove left border on mobile */
+    border-top: 5px solid var(--accent-primary); /* Add top border */
+  }
+  .education-icon {
+      margin-bottom: 15px;
+  }
+  .education-details h3,
+  .education-details .institution,
+  .education-details .duration,
+  .education-details .description {
+      text-align: left;
+  }
 }

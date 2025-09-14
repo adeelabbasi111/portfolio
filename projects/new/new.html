@@ -1,50 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio</title>
-  <link rel="stylesheet" href="../../style.css">
-  <link rel="stylesheet" href="phtoshop.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Playwrite+AU+QLD&display=swap" rel="stylesheet" />
-  <script src="https://kit.fontawesome.com/ec5546d54a.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adeel Abbasi | Photoshop Portfolio</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css" />
+    <script defer src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"></script>
+
+    <script src="https://kit.fontawesome.com/ec5546d54a.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="new.css" />
 </head>
-
 <body>
-  <div class="intro">
-    <div class="hero">
-      <h1>Photo Editing</h1>
-    </div>
-    <p class="description">
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio voluptas
-      quis, commodi inventore eius quibusdam iste quo molestiae minima facere?
-    </p>
-  </div>
-  </div>
 
+    <header id="hero-photoshop">
+        <div class="hero-content">
+            <h1 class="hero-title">Digital Artistry</h1>
+            <p class="hero-subtitle">Transforming Pixels into Perfection. Explore my work in photo retouching, color grading, and creative manipulation.</p>
+        </div>
+        <a href="#portfolio-grid" class="scroll-down-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </header>
 
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">Services Offered</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <i class="fas fa-camera-retro"></i>
+                    <h3>Photo Retouching</h3>
+                    <p>Professional skin smoothing, blemish removal, and portrait enhancement.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-palette"></i>
+                    <h3>Color Grading</h3>
+                    <p>Creative color correction to set the mood and create cinematic looks.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-magic"></i>
+                    <h3>Manipulation</h3>
+                    <p>Seamless object removal, background changes, and composite imagery.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Lighting & Exposure</h3>
+                    <p>Balancing light, shadow, and exposure for a perfectly lit photograph.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section id="contact" class="contact-section">
-    <h2>Contact Me</h2>
-    <p>Let's connect! You can reach me here:</p>
+    <section id="portfolio-grid">
+        <div class="container">
+            <h2 class="section-title">My Work</h2>
+            <p class="section-subtitle">Drag the slider on each image to see the transformation.</p>
 
-    <div class="social-links">
-      <a href="mailto:adeelabbasipersonal@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
-      <a href="https://www.linkedin.com/in/adeelabbasi111/" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/adeelabbasi111" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://wa.me/923215773211" target="_blank"><i class="fab fa-whatsapp"></i></a>
-      <a href="https://www.instagram.com/adeelabbasi111" target="_blank"><i class="fab fa-instagram"></i></a>
-    </div>
-  </section>
+            <div class="portfolio-items">
+                <div class="portfolio-card">
+                    <div class="card-header">
+                        <h3>Vibrant Color Grading</h3>
+                        <p>Enhanced the tones and mood of the image for a dramatic, cinematic feel.</p>
+                    </div>
+                    <img-comparison-slider class="slider-theme" hover="true">
+                        <img slot="first" src="images/after.jpg" />
+                        <img slot="second" src="images/before.jpg" />
+                    </img-comparison-slider>
+                </div>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Adeel Abbaasi. All Rights Reserved.</p>
-  </footer>
+                <div class="portfolio-card">
+                    <div class="card-header">
+                        <h3>Portrait Retouching</h3>
+                        <p>Smoothed skin, enhanced eyes, and removed blemishes for a clean, professional look.</p>
+                    </div>
+                    <img-comparison-slider class="slider-theme" hover="true">
+                        <img slot="first" src="images/portrait-after.jpg" /> <img slot="second" src="images/portrait-before.jpg" /> </img-comparison-slider>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="card-header">
+                        <h3>Lighting Adjustment</h3>
+                        <p>Corrected exposure and balanced shadows to bring out hidden details.</p>
+                    </div>
+                    <img-comparison-slider class="slider-theme" hover="true">
+                        <img slot="first" src="images/lighting-after.jpg" /> <img slot="second" src="images/lighting-before.jpg" /> </img-comparison-slider>
+                </div>
+                
+                </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>Contact Me</h2>
+        <p>Let's connect! You can reach me here:</p>
+        <div class="social-links">
+            <a href="mailto:adeelabbasipersonal@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/adeelabbasi111/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/adeelabbasi111" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://wa.me/923215773211" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/adeelabbasi111" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© <span id="current-year">2025</span> Adeel Abbasi. All Rights Reserved.</p>
+    </footer>
+
+    <script src="new.js"></script>
 </body>
-
 </html>

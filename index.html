@@ -2,160 +2,238 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Orbitron:wght@500;900&family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playwrite+AU+QLD&display=swap"
-      rel="stylesheet"
-    />
   </head>
   <body>
-    <!-- Top -->
-    <div id="intro">
+    <section id="intro">
       <img id="profilePicture" src="images/profile.jpg" alt="Profile Picture" />
       <h1 class="glitch" data-text="Adeel Abbasi">Adeel Abbasi</h1>
-      <h2>I am a</h2>
-      <p id="skillText">Loading...</p>
+      <div id="description">
+        <h2>I AM A</h2>
+        <p id="skillText">Loading...</p>
+      </div>
       <div class="hero-buttons">
-  <a href="#contact" class="btn hire-btn">Hire Me</a>
-  <a href="#skills" class="btn work-btn">View My Work</a>
-</div>
-    </div>
-
-    <!-- About ME -->
-    <div id="aboutMe">
-      <div>
-        
-      <h1 class="heading">About Me</h1>
-      <p class="headingIntro">
-        I am a passionate developer with experience in various technologies. I
-        love creating interactive and dynamic web applications that provide a
-        great user experience.
-      </p>
+        <a href="#contact" class="btn hire-btn">Hire Me</a>
+        <a href="#skills" class="btn work-btn">View My Work</a>
       </div>
-      <img  src="images/aboutMe.jpg" alt="About Me Image" />
-
-    </div>
-
-    <!-- Portfolio -->
-
-          <h1 class="heading">Portfolio</h1>
-    <p class="headingIntro">Click on the cards to learn more about my skills</p>
-      
-    <section id="skills">
-  <a href="projects/photoshop/photoshop.html">
-      <div class="skill-card">
-        <img src="images/logos/photoshop.jpg" alt="Photoshop Logo" />
-        <h3>Adobe Photoshop</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
-          ratione quia commodi quis recusandae, dicta nihil accusamus labore
-          deleniti sequi.
-        </p>
-      </div>
-    </a>
-
-  <a href="projects/python/python.html">
-        <div class="skill-card">
-        <img src="images/logos/python.jpg" alt="Python Logo" />
-        <h3>Python</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
-          ratione quia commodi quis recusandae, dicta nihil accusamus labore
-          deleniti sequi.
-        </p>
-        </div>
-      </a>
-
-  <a href="projects/flutter/flutter.html">
-        <div class="skill-card">
-        <img src="images/logos/flutter.jpg" alt="Flutter Logo" />
-        <h3>Flutter</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
-          ratione quia commodi quis recusandae, dicta nihil accusamus labore
-          deleniti sequi.
-        </p>
-        </div>
-      </a>
-  <a href="projects/web/web.html">
-        <div class="skill-card">
-        <img src="images/logos/web-dev.jpg" alt="Full Stack Developer Logo" />
-        <h3>Full Stack Developer</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
-          ratione quia commodi quis recusandae, dicta nihil accusamus labore
-          deleniti sequi.
-        </p>
-        </div>
-      </a>
-  <a href="projects/unity/unity.html">
-        <div class="skill-card">
-        <img src="images/logos/game-dev.jpg" alt="Unity Logo" />
-        <h3>Unity</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
-          ratione quia commodi quis recusandae, dicta nihil accusamus labore
-          deleniti sequi.
-        </p>
-        </div>
-      </a>
-  <a href="projects/fl/fl.html">
-        <div class="skill-card">
-        <img src="images/logos/fl.jpg" alt="Photoshop Logo" />
-        <h3>Fl Studio</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
-          ratione quia commodi quis recusandae, dicta nihil accusamus labore
-          deleniti sequi.
-        </p>
-        </div>
-      </a>
-  <a href="projects/premiere/premiere.html">
-        <div class="skill-card">
-        <img src="images/logos/video-editing.jpg" alt="Photoshop Logo" />
-        <h3>Premiere Pro</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
-          ratione quia commodi quis recusandae, dicta nihil accusamus labore
-          deleniti sequi.
-        </p>
-        </div>
-      </a>
     </section>
-    <!-- Contact Section -->
-<section id="contact" class="contact-section">
-  <h2>Contact Me</h2>
-  <p>Let's connect! You can reach me here:</p>
 
-  <div class="social-links">
-    <a href="mailto:adeelabbasipersonal@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
-    <a href="https://www.linkedin.com/in/adeelabbasi111/" target="_blank"><i class="fab fa-linkedin"></i></a>
-    <a href="https://github.com/adeelabbasi111" target="_blank"><i class="fab fa-github"></i></a>
-    <a href="https://wa.me/923215773211" target="_blank"><i class="fab fa-whatsapp"></i></a>
-    <a href="https://www.instagram.com/adeelabbasi111" target="_blank"><i class="fab fa-instagram"></i></a>
+    <section id="aboutMe">
+      <div class="about-container">
+        <img src="images/aboutMe.jpg" alt="About Me Image" class="about-image" />
+        <div class="about-text">
+          <h2>About Me</h2>
+          <p>
+            I am a passionate developer with experience in various technologies. I
+            love creating interactive and dynamic web applications that provide a
+            great user experience.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="education-container">
+        <h2>My Education</h2>
+        <div class="education-grid">
+          
+          <div class="education-item animate-from-left">
+            <div class="education-icon">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+            <div class="education-details">
+              <h3>Bachelors in Artificial Intelligence</h3>
+              <p class="institution">Capital University of Science and Technology</p>
+              <p class="duration">2025 - 2029</p>
+              <p class="description">
+                Specialized in Software Development and Artificial Intelligence.
+                Achieved a GPA of 3.74/4.0.
+              </p>
+            </div>
+          </div>
+
+          <div class="education-item animate-from-right">
+            <div class="education-icon">
+                <i class="fas fa-book-open"></i>
+            </div>
+            <div class="education-details">
+              <h3>Intermediate in Computer Science (ICS)</h3>
+              <p class="institution">Punjab College</p>
+              <p class="duration">2022 - 2024</p>
+              <p class="description">
+                Focused on foundational computer concepts and programming.
+              </p>
+            </div>
+          </div>
+
+          <div class="education-item animate-from-left">
+            <div class="education-icon">
+                <i class="fas fa-school"></i>
+            </div>
+            <div class="education-details">
+              <h3>Matriculation (Science Group)</h3>
+              <p class="institution">Radiant Secondary School</p>
+              <p class="duration">2020 - 2022</p>
+              <p class="description">
+                Strong foundation in Science subjects.
+                Secured 93% marks.
+              </p>
+            </div>
+          </div>
+
+          </div>
+      </div>
+    </section>
+
+<section id="skills">
+  <div class="container">
+    <h2>My Skills</h2>
+    <p>Explore my skills and the projects I’ve built with them.</p>
+    <div class="skill-container">
+
+      <div class="skill-item left">
+        <a href="projects/photoshop/photoshop.html">
+          <div class="skill">
+            <img src="images/logos/photoshop.jpg" alt="Adobe Photoshop Logo" />
+            <h3>Adobe Photoshop</h3>
+            <p>
+              Skilled in Photo Retouching, Image Manipulation, and Creative Graphic Design.
+              Working professionally with Photoshop since 2019.
+            </p>
+          </div>
+        </a>
+      </div>
+
+      <div class="skill-item right">
+        <a href="projects/python/python.html">
+          <div class="skill">
+            <img src="images/logos/python.jpg" alt="Python Logo" />
+            <h3>Python</h3>
+            <p>
+              Certified Python programmer experienced in GUI development, data analysis, 
+              and automation scripts.
+            </p>
+          </div>
+        </a>
+      </div>
+
+      <div class="skill-item left">
+        <a href="projects/flutter/flutter.html">
+          <div class="skill">
+            <img src="images/logos/flutter.jpg" alt="Flutter Logo" />
+            <h3>Flutter</h3>
+            <p>
+              Developing modern cross-platform mobile applications with clean UI and smooth performance.
+            </p>
+          </div>
+        </a>
+      </div>
+
+      <div class="skill-item right">
+        <a href="projects/web/web.html">
+          <div class="skill">
+            <img src="images/logos/web-dev.jpg" alt="Web Development Logo" />
+            <h3>Web Development</h3>
+            <p>
+              Full-stack developer with experience in responsive, dynamic web applications.
+              Strong knowledge of HTML, CSS, JavaScript, and backend integration.
+            </p>
+          </div>
+        </a>
+      </div>
+
+      <div class="skill-item left">
+        <a href="projects/unity/unity.html">
+          <div class="skill">
+            <img src="images/logos/game-dev.jpg" alt="Unity Logo" />
+            <h3>Game Development (Unity)</h3>
+            <p>
+              Indie game developer with hands-on experience in designing and coding 2D/3D games.
+            </p>
+          </div>
+        </a>
+      </div>
+
+      <div class="skill-item right">
+        <a href="projects/fl/fl.html">
+          <div class="skill">
+            <img src="images/logos/fl.jpg" alt="FL Studio Logo" />
+            <h3>FL Studio</h3>
+            <p>
+              Music producer and rapper since 2020 with multiple songs released across platforms. 
+              Experienced in mixing, mastering, and sound design.
+            </p>
+          </div>
+        </a>
+      </div>
+
+      <div class="skill-item left">
+        <a href="projects/premiere/premiere.html">
+          <div class="skill">
+            <img src="images/logos/video-editing.jpg" alt="Adobe Premiere Pro Logo" />
+            <h3>Video Editing</h3>
+            <p>
+              Creating engaging video content with Adobe Premiere Pro, combining visuals and audio for maximum impact.
+            </p>
+          </div>
+        </a>
+      </div>
+
+      <div class="skill-item right">
+        <a href="#">
+          <div class="skill">
+            <h3>Coming Soon...</h3>
+            <p>Always exploring and expanding my skill set.</p>
+          </div>
+        </a>
+      </div>
+
+    </div>
   </div>
 </section>
 
-<!-- Footer -->
-<footer>
-  <p>© 2025 Adeel Abbaasi. All Rights Reserved.</p>
-</footer>
 
-<!-- Font Awesome Link -->
-<script src="https://kit.fontawesome.com/ec5546d54a.js" crossorigin="anonymous"></script>
-<script src="index.js"></script>
+    <section id="contact" class="contact-section">
+      <h2>Contact Me</h2>
+      <p>Let's connect! You can reach me here:</p>
 
+      <div class="social-links">
+        <a href="mailto:adeelabbasipersonal@gmail.com" target="_blank"
+          ><i class="fas fa-envelope"></i
+        ></a>
+        <a href="https://www.linkedin.com/in/adeelabbasi111/" target="_blank"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+        <a href="https://github.com/adeelabbasi111" target="_blank"
+          ><i class="fab fa-github"></i
+        ></a>
+        <a href="https://wa.me/923215773211" target="_blank"
+          ><i class="fab fa-whatsapp"></i
+        ></a>
+        <a href="https://www.instagram.com/adeelabbasi111" target="_blank"
+          ><i class="fab fa-instagram"></i
+        ></a>
+      </div>
+    </section>
 
+    <footer>
+      <p>
+        © <span id="current-year"></span> Adeel Abbasi. All Rights Reserved.
+      </p>
+    </footer>
+
+    <script
+      src="https://kit.fontawesome.com/ec5546d54a.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js"></script>
   </body>
 </html>

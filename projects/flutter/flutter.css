@@ -1,29 +1,175 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+/* CSS Variables for easy theme management */
+:root {
+  --bg-color: #121212;
+  --card-bg-color: #1e1e1e;
+  --border-color: #2c2c2c;
+  --text-color: #e0e0e0;
+  --text-muted-color: #a0a0a0;
+  --heading-color: #ffffff;
+  --primary-color: #007bff; /* A vibrant blue for Flutter */
+  --primary-hover-color: #0056b3;
+  --shadow-color: rgba(0, 0, 0, 0.5);
 }
 
-body{
-    font-family: "Poppins", sans-serif;
-    overflow-x: hidden;
-    color: white;
-    background-color: rgb(0, 0, 0);
-    scroll-behavior: smooth;
+/* Basic Reset and Body Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.intro{
-    height: 100vh;
+html {
+  scroll-behavior: smooth;
 }
-.hero{
-    background-image: url("images/bg.jpg");
-    background-size: contain;
-    height: 70vh;
-    display: flex;
-    align-items: end;
-    justify-content: center;
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.7;
 }
-.description{
-    height: 30vh;
-    text-align: center;
-    margin: 5vh 5%;
+img {
+  max-width: 100%;
+  display: block;
+}
+a {
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Layout Container */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 0;
+}
+
+/* Header Section */
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.header h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--heading-color);
+  
+}
+
+.hollow {
+  color: transparent;
+  -webkit-text-stroke: 1px #42a5f5; /* Flutter blue outline */
+  font-weight: 400;}
+
+.header .animated-gradient-text {
+  background: linear-gradient(90deg, #7da9eb, #42a5f5, #90caf9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: gradient-animation 5s linear infinite;
+}
+@keyframes gradient-animation {
+  to {
+    background-position: 200% center;
+  }
+}
+.header p {
+  font-size: 1.1rem;
+  color: var(--text-muted-color);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+/* Project Card */
+.project-card {
+  background-color: var(--card-bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 5px 15px var(--shadow-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Animation state */
+  opacity: 0;
+  transform: translateY(40px);
+}
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px var(--shadow-color), 0 0 25px rgba(66, 165, 245, 0.2); /* Flutter blue glow */
+}
+.project-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.project-card-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1; /* Ensures the image is always a square */
+  object-fit: cover; /* Prevents image stretching */
+}
+.project-card-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Allows content to fill space */
+}
+.project-card-content h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--heading-color);
+  margin-bottom: 0.75rem;
+}
+.project-card-content p {
+  color: var(--text-muted-color);
+  margin-bottom: 1.5rem;
+  flex-grow: 1; /* Pushes the button to the bottom */
+}
+
+/* Button Styling */
+.btn {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: auto; /* Aligns button to the bottom */
+  align-self: flex-start; /* Prevents button from stretching full width */
+}
+.btn:hover {
+  background-color: var(--primary-hover-color);
+  transform: scale(1.05);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  margin-top: 4rem;
+  padding: 2rem 0;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-muted-color);
+}
+
+/* Responsive Design using Media Queries */
+@media (min-width: 640px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .header h1 {
+    font-size: 3.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

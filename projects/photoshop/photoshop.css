@@ -1,0 +1,362 @@
+/* Ensure images inside img-comparison-slider are contained, with no padding or border */
+img-comparison-slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+}
+/* ===== SETUP & VARIABLES ===== */
+:root {
+  --bg-dark: #0a0a0a;
+  --bg-medium: #1a1a1a;
+  --border-color: #2a2a2a;
+  --text-light: #f0f0f0;
+  --text-muted: #888;
+  --accent-primary: #00A8F3; 
+  /* --accent-primary: #9d6fff; A color inspired by Premiere Pro's UI */
+  --accent-secondary: #F50057;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--accent-primary);
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto 3rem auto;
+}
+
+/* ===== HERO SECTION ===== */
+#hero-photoshop {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  background: linear-gradient(rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 1)),
+    url("images/bg.jpg") no-repeat center center/cover;
+  position: relative;
+}
+
+.hero-title {
+  font-family: "Orbitron", sans-serif;
+  font-size: 4rem;
+  color: var(--text-light);
+  text-shadow: 0 0 15px var(--accent-primary);
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin-top: 1rem;
+}
+
+.scroll-down-indicator {
+  position: absolute;
+  bottom: 30px;
+  color: var(--accent-primary);
+  font-size: 2rem;
+  animation: bounce 2s infinite;
+}
+
+/* ===== REBUILT SERVICES SECTION (TIMELINE) ===== */
+#services {
+  background-color: var(--bg-dark);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.services-timeline-container {
+  position: relative;
+  z-index: 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* The vertical timeline */
+.services-timeline-container::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  background-color: var(--border-color);
+  top: 50px;
+  bottom: 0;
+  left: 50%;
+  z-index: 0;
+  height: 0; /* Starts at 0, animated by JS */
+  animation: draw-line 10s forwards ease-out;
+  animation-play-state: var(--animation-play-state);
+}
+
+@keyframes draw-line {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+.service-item {
+  padding: 10px 40px;
+  position: relative;
+  width: 50%;
+  opacity: 0; /* Hidden for scroll animation */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.service-item.left {
+  left: 0;
+  transform: translateX(-30px);
+}
+
+.service-item.right {
+  left: 50%;
+    z-index: 10;
+}
+
+/* This class is added by JS on scroll */
+.service-item.is-visible {
+    z-index: 10;
+  transform: translateX(0);
+}
+
+/* The circles on the timeline */
+.service-item::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: -15px;
+  background-color: var(--bg-medium);
+  border: 4px solid var(--accent-primary); /* Using secondary color */
+  top: 32px; /* Adjust to align with content */
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.service-item.right::after {
+  left: -12px;
+  z-index: 2;
+}
+
+.service-content {
+  padding: 20px 30px;
+  background-color: var(--bg-medium);
+  position: relative;
+  border-radius: 8px;
+  border-left: 3px solid var(--accent-primary);
+  text-align: left;
+}
+
+.service-content i {
+  font-size: 2rem;
+  color: var(--accent-primary);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.service-content h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.service-content p {
+  color: var(--text-muted);
+}
+
+/* ===== PORTFOLIO GRID (RESTORED) ===== */
+/* ===== PORTFOLIO GRID ===== */
+.portfolio-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.portfolio-card {
+  background-color: var(--bg-medium);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  opacity: 0; /* For animation */
+  transform: translateY(50px);
+}
+
+.portfolio-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 15px 40px var(--shadow-color);
+  border-color: var(--accent-primary);
+}
+
+.card-header {
+  padding: 1.5rem;
+}
+
+.card-header h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-header p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.slider-theme {
+  --divider-width: 3px;
+  --divider-color: var(--accent-primary);
+  --handle-size: 50px;
+  --handle-color: var(--accent-primary);
+  --handle-icon-color: var(--bg-dark);
+  --handle-outline-width: 0px;
+}
+
+img-comparison-slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* display: block; */
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  aspect-ratio: 3/4;
+}
+
+.is-visible{
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* ===== CONTACT & FOOTER ===== */
+
+/* Contact Section */
+.contact-section {
+  text-align: center;
+  padding: 4rem 20px;
+  background: var(--bg-medium); /* Slightly different background for separation */
+  color: var(--text-light);
+}
+
+.contact-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: var(--accent-primary);
+}
+
+.contact-section p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: var(--text-muted);
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.social-links a {
+  font-size: 2rem; /* Larger icons */
+  color: var(--text-muted);
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--accent-primary);
+  transform: scale(1.2) translateY(-5px);
+}
+
+footer {
+  background: var(--bg-dark);
+  color: var(--text-muted);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9rem;
+  border-top: 1px solid var(--border-color);
+}
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* ===== RESPONSIVENESS ===== */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.8rem;
+  }
+  .section-title {
+    font-size: 2rem;
+  }
+
+  /* Timeline for mobile */
+  .services-timeline-container::after {
+    left: 20px;
+  }
+  .service-item {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+  .service-item.left,
+  .service-item.right {
+    left: 0;
+  }
+  .service-item::after {
+    left: 10px;
+  }
+  .service-item.right::after {
+    left: 10px;
+  }
+
+  /* Portfolio Grid for mobile */
+  .portfolio-items {
+    grid-template-columns: 1fr;
+  }
+}

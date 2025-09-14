@@ -1,50 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio</title>
-  <link rel="stylesheet" href="../../style.css">
-  <link rel="stylesheet" href="phtoshop.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Playwrite+AU+QLD&display=swap" rel="stylesheet" />
-  <script src="https://kit.fontawesome.com/ec5546d54a.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Editor Portfolio | Premiere Pro Specialist</title>
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="premiere.css">
+
+    <!-- All styling is self-contained below -->
 
 </head>
-
 <body>
-  <div class="intro">
-    <div class="hero">
-      <h1>Photo Editing</h1>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1 class="glitch" data-text="Video Editor">Video Editor</h1>
+        <p class="hero-subtitle">Crafting Stories, Frame by Frame | Premiere Pro Specialist</p>
+    </header>
+
+    <!-- Skills Timeline -->
+    <section class="skills-timeline">
+        <div class="container">
+            <h2>My Editing Workflow</h2>
+            <div class="timeline-container">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <img src="../../images/profile.jpg" alt="">
+                        <h3>Color Grading & Correction</h3>
+                        <p>Creating cinematic looks and ensuring visual consistency using Lumetri Color. From subtle corrections to stylized grades.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>Motion Graphics & Titles</h3>
+                        <p>Designing engaging lower thirds, titles, and custom animations directly in Premiere Pro's Essential Graphics panel.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>Advanced Audio Mixing</h3>
+                        <p>Balancing dialogue, music, and sound effects using the Essential Sound panel and audio track mixer for a professional finish.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>Dynamic Editing & Pacing</h3>
+                        <p>Utilizing advanced cutting techniques, speed ramps, and transitions to create a compelling rhythm and narrative flow.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Showcase -->
+    <section class="portfolio">
+        <div class="container">
+            <h2>Showcase</h2>
+            <div class="portfolio-grid">
+                <!-- Project 1 -->
+                <div class="portfolio-card" data-video-src="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                    <img src="https://placehold.co/600x400/1a1a1a/9d6fff?text=Corporate+Reel" alt="Corporate Video Reel">
+                    <div class="card-overlay">
+                        <h3>Corporate Brand Story</h3>
+                        <p>A compelling narrative for a tech startup, showcasing their mission and values.</p>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="portfolio-card" data-video-src="https://www.youtube.com/embed/z-zxa9z14sA">
+                    <img src="https://placehold.co/600x400/1a1a1a/ff6f91?text=Travel+Vlog" alt="Travel Vlog">
+                    <div class="card-overlay">
+                        <h3>Cinematic Travel Vlog</h3>
+                        <p>Dynamic editing and vibrant color grading to capture the energy of a journey through Asia.</p>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="portfolio-card" data-video-src="https://www.youtube.com/embed/3hNm4H27L9c">
+                    <img src="https://placehold.co/600x400/1a1a1a/9d6fff?text=Music+Video" alt="Music Video">
+                    <div class="card-overlay">
+                        <h3>Indie Music Video</h3>
+                        <p>Fast-paced cuts and creative transitions synchronized perfectly with the music's rhythm.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; <span id="current-year"></span> Adeel Abbasi. Let's create something amazing.</p>
+    </footer>
+
+    <!-- Video Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close">&times;</button>
+            <iframe id="lightbox-video" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
     </div>
-    <p class="description">
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio voluptas
-      quis, commodi inventore eius quibusdam iste quo molestiae minima facere?
-    </p>
-  </div>
-  </div>
 
+    <script src="premiere.js"></script>
 
-
-  <section id="contact" class="contact-section">
-    <h2>Contact Me</h2>
-    <p>Let's connect! You can reach me here:</p>
-
-    <div class="social-links">
-      <a href="mailto:adeelabbasipersonal@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
-      <a href="https://www.linkedin.com/in/adeelabbasi111/" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/adeelabbasi111" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://wa.me/923215773211" target="_blank"><i class="fab fa-whatsapp"></i></a>
-      <a href="https://www.instagram.com/adeelabbasi111" target="_blank"><i class="fab fa-instagram"></i></a>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Adeel Abbaasi. All Rights Reserved.</p>
-  </footer>
 </body>
-
 </html>
+
