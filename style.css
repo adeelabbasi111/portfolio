@@ -200,7 +200,7 @@ body {
 }
 .about-container {
   display: flex;
-  align-items: start;
+  align-items: center;
   justify-content: center;
   gap: 4rem;
   max-width: 1000px;
@@ -214,8 +214,10 @@ body {
   border: 2px solid var(--border-color);
 }
 .about-text {
-  max-width: 400px;
+  max-width: 550px;
 }
+
+
 
 .about-text h2 {
   font-size: 2.5rem;
@@ -229,6 +231,11 @@ body {
   font-weight: 600;
   text-align: left;
   line-height: 1.8;
+}
+
+.about-text p span {
+  color: #a3a3a3;
+  font-weight: 600;
 }
 
 /* NEW: Education Section Styling */

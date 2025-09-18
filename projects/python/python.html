@@ -1,138 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>My Flutter Portfolio</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adeel Abbasi | Python Portfolio</title>
 
-  <link rel="stylesheet" href="../../style.css">
-  <link rel="stylesheet" href="flutter.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Playwrite+AU+QLD&display=swap" rel="stylesheet" />
-  <script src="https://kit.fontawesome.com/ec5546d54a.js" crossorigin="anonymous"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+    
+    <script src="https://kit.fontawesome.com/ec5546d54a.js" crossorigin="anonymous"></script>
 
+    <link rel="stylesheet" href="python.css" />
+    <!-- tsParticles library for animated particles -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body>
 
-    <!-- Header Section -->
-    <header class="header container">
-        <h1>My <span class="animated-gradient-text">Flutter </span><span class="hollow">Projects</span></h1>
-        <p>A curated collection of my work, showcasing mobile applications built with Flutter and Dart.</p>
-    </header>
-
-    <!-- Main Content -->
-    <main class="container">
-        <div class="projects-grid">
-            <!-- Project Card 1 -->
-            <div class="project-card">
-                <img src="https://placehold.co/400x400/1e1e1e/42a5f5?text=Finance+App" alt="Flutter Finance App" class="project-card-image">
-                <div class="project-card-content">
-                    <h3>Finance & Budgeting App</h3>
-                    <p>A mobile app to track expenses, manage budgets, and visualize spending habits with interactive charts. Built with Flutter and Provider for state management.</p>
-                    <a href="#" class="btn">View on GitHub &rarr;</a>
+    <header id="hero-python">
+    <div id="particles-js" class="background-particles"></div>
+        <div class="hero-content">
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <span class="btn-dot red"></span>
+                        <span class="btn-dot yellow"></span>
+                        <span class="btn-dot green"></span>
+                    </div>
+                    <span>adeel_abbasi.py — /bin/zsh</span>
                 </div>
-            </div>
-            <!-- Project Card 2 -->
-            <div class="project-card">
-                <img src="https://placehold.co/400x400/1e1e1e/42a5f5?text=Weather+App" alt="Flutter Weather App" class="project-card-image">
-                <div class="project-card-content">
-                    <h3>Minimalist Weather App</h3>
-                    <p>A clean weather application that provides real-time forecasts using the OpenWeatherMap API. Features a sleek UI with custom animations.</p>
-                    <a href="#" class="btn">View on GitHub &rarr;</a>
-                </div>
-            </div>
-            <!-- Project Card 3 -->
-            <div class="project-card">
-                <img src="https://placehold.co/400x400/1e1e1e/42a5f5?text=E-Commerce+UI" alt="Flutter E-Commerce UI" class="project-card-image">
-                <div class="project-card-content">
-                    <h3>E-Commerce UI Kit</h3>
-                    <p>A beautiful and responsive user interface kit for an online shopping application. Includes product pages, shopping cart, and checkout flow.</p>
-                    <a href="#" class="btn">View on GitHub &rarr;</a>
-                </div>
-            </div>
-             <!-- Project Card 4 -->
-            <div class="project-card">
-                <img src="https://placehold.co/400x400/1e1e1e/42a5f5?text=Recipe+Finder" alt="Flutter Recipe Finder" class="project-card-image">
-                <div class="project-card-content">
-                    <h3>Recipe Finder App</h3>
-                    <p>An app that helps users discover new recipes based on ingredients they have. Integrated with a recipe API and local database for saving favorites.</p>
-                    <a href="#" class="btn">View on GitHub &rarr;</a>
-                </div>
-            </div>
-             <!-- Project Card 5 -->
-            <div class="project-card">
-                <img src="https://placehold.co/400x400/1e1e1e/42a5f5?text=Chat+App" alt="Flutter Chat App" class="project-card-image">
-                <div class="project-card-content">
-                    <h3>Real-time Chat App</h3>
-                    <p>A messaging application built with Flutter and Firebase, featuring real-time message updates, user authentication, and push notifications.</p>
-                    <a href="#" class="btn">View on GitHub &rarr;</a>
-                </div>
-            </div>
-             <!-- Project Card 6 -->
-            <div class="project-card">
-                <img src="https://placehold.co/400x400/1e1e1e/42a5f5?text=Music+Player" alt="Flutter Music Player" class="project-card-image">
-                <div class="project-card-content">
-                    <h3>Music Player UI</h3>
-                    <p>A concept for a stylish music player app with complex UI elements, animations, and controls for playback, playlists, and album views.</p>
-                    <a href="#" class="btn">View on GitHub &rarr;</a>
+                <div class="terminal-body">
+                    <p class="terminal-prompt">> Python Development <span class="cursor">|</span></p>
+                    <p class="terminal-output" id="terminal-subtitle"></p>
                 </div>
             </div>
         </div>
-    </main>
-      <section id="contact" class="contact-section">
-    <h2>Contact Me</h2>
-    <p>Let's connect! You can reach me here:</p>
+    </header>
 
-    <div class="social-links">
-      <a href="mailto:adeelabbasipersonal@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
-      <a href="https://www.linkedin.com/in/adeelabbasi111/" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/adeelabbasi111" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://wa.me/923215773211" target="_blank"><i class="fab fa-whatsapp"></i></a>
-      <a href="https://www.instagram.com/adeelabbasi111" target="_blank"><i class="fab fa-instagram"></i></a>
-    </div>
-  </section>
-    
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; <span id="current-year"></span> Your Name. All Rights Reserved.</p>
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">// My Capabilities</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="card-header">
+                        <i class="fas fa-robot"></i>
+                        <span>def automation_scripts():</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="docstring">"""Automating repetitive tasks with powerful Python scripts to improve efficiency and workflow."""</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="card-header">
+                        <i class="fas fa-database"></i>
+                        <span>def data_analysis():</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="docstring">"""Leveraging libraries like Pandas and NumPy to process, analyze, and visualize complex datasets."""</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="card-header">
+                        <i class="fas fa-desktop"></i>
+                        <span>def gui_development():</span>
+                    </div>
+                    <div class="card-body">
+                        <p class="docstring">"""Building intuitive and user-friendly desktop applications using frameworks like Tkinter and PyQt."""</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certificate">
+        <div class="container">
+            <h2 class="section-title">// Verified Module</h2>
+            <div class="certificate-wrapper">
+                <div class="certificate-frame">
+                    <img src="python_certificate.jpg" alt="Udemy Python Certificate" />
+                    <div class="scanline"></div>
+                </div>
+                <div class="certificate-info">
+                    <h3>Udemy Certified Python Programmer</h3>
+                    <p>Completed a comprehensive course covering fundamental and advanced Python concepts, data structures, and object-oriented programming.</p>
+                    <a href="https://www.udemy.com/certificate/UC-622fe05b-186e-42e8-aa87-f55fcb964494/" target="_blank" class="btn-cta">Verify Credential</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">// Project Repository</h2>
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <div class="project-icon"><i class="fab fa-python"></i></div>
+                    <h3 class="project-title">Project Alpha</h3>
+                    <p class="project-description">A web scraping tool built to gather and organize data from multiple sources into a streamlined CSV file.</p>
+                    <div class="project-tags">
+                        <span>BeautifulSoup</span>
+                        <span>Requests</span>
+                        <span>Pandas</span>
+                    </div>
+                    <a href="https://github.com/your-username/project-alpha" target="_blank" class="btn-github">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon"><i class="fas fa-calculator"></i></div>
+                    <h3 class="project-title">Data Visualizer</h3>
+                    <p class="project-description">A desktop application that allows users to upload datasets and generate various interactive plots and charts.</p>
+                    <div class="project-tags">
+                        <span>Tkinter</span>
+                        <span>Matplotlib</span>
+                        <span>NumPy</span>
+                    </div>
+                    <a href="https://github.com/your-username/data-visualizer" target="_blank" class="btn-github">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+
+                 <div class="project-card">
+                    <div class="project-icon"><i class="fas fa-gamepad"></i></div>
+                    <h3 class="project-title">PyGame Adventure</h3>
+                    <p class="project-description">A simple 2D adventure game developed using the PyGame library, featuring sprite animations and collision detection.</p>
+                    <div class="project-tags">
+                        <span>PyGame</span>
+                        <span>OOP</span>
+                    </div>
+                    <a href="https://github.com/your-username/pygame-adventure" target="_blank" class="btn-github">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+                
+                </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>Contact Me</h2>
+        <div class="social-links">
+            <a href="mailto:adeelabbasipersonal@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/adeelabbasi111/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/adeelabbasi111" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://wa.me/923215773211" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/adeelabbasi111" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© <span id="current-year"></span> Adeel Abbasi. All Rights Reserved.</p>
     </footer>
-
-    <!-- JavaScript for animations -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Set current year in the footer
-            document.getElementById('current-year').textContent = new Date().getFullYear();
-
-            // Animate cards on scroll
-            const cards = document.querySelectorAll('.project-card');
-
-            // The Intersection Observer API is a modern, efficient way to handle scroll animations
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry, index) => {
-                    if (entry.isIntersecting) {
-                        // Add a delay for each card to create a staggered effect
-                        setTimeout(() => {
-                            entry.target.classList.add('is-visible');
-                        }, index * 100); 
-                        
-                        // Stop observing the card once it's visible to save resources
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.1 // Trigger when 10% of the card is visible
-            });
-
-            // Tell the observer to watch each card
-            cards.forEach(card => {
-                observer.observe(card);
-            });
-        });
-    </script>
+    
+    <script src="python.js"></script>
 </body>
 </html>

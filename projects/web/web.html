@@ -1,138 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adeel Abbasi | Web Development Portfolio</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>My Flutter Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Bai+Jamjuree:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="stylesheet" href="../../style.css">
-  <link rel="stylesheet" href="flutter.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Playwrite+AU+QLD&display=swap" rel="stylesheet" />
-  <script src="https://kit.fontawesome.com/ec5546d54a.js" crossorigin="anonymous"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script
+      src="https://kit.fontawesome.com/ec5546d54a.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link rel="stylesheet" href="web.css" />
+  </head>
 
-</head>
-<body>
+  <body>
+    <div id="preloader">
+      <div class="loader-logo">AA</div>
+    </div>
 
-    <!-- Header Section -->
-    <header class="header container">
-        <h1>My <span class="animated-gradient-text">Flutter </span><span class="hollow">Projects</span></h1>
-        <p>A curated collection of my work, showcasing mobile applications built with Flutter and Dart.</p>
+    <header id="hero-web">
+      <div id="particles-js"></div>
+      <div class="hero-content">
+        <h1 class="hero-title"></h1>
+        <h1 class="hero-title">Experiences</h1>
+        <p class="hero-subtitle">
+          Architecting innovative and performant solutions for the modern web.
+        </p>
+      </div>
+      <div class="scroll-indicator">
+        <div class="mouse"></div>
+      </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="container">
-        <div class="projects-grid">
-            <!-- Project Card 1 -->
-            <div class="project-card">
-                <img src="https://placehold.co/400x400/1e1e1e/42a5f5?text=Finance+App" alt="Flutter Finance App" class="project-card-image">
-                <div class="project-card-content">
-                    <h3>Finance & Budgeting App</h3>
-                    <p>A mobile app to track expenses, manage budgets, and visualize spending habits with interactive charts. Built with Flutter and Provider for state management.</p>
-                    <a href="#" class="btn">View on GitHub &rarr;</a>
-                </div>
-            </div>
-            <!-- Project Card 2 -->
-            <div class="project-card">
-                <img src="https://placehold.co/400x400/1e1e1e/42a5f5?text=Weather+App" alt="Flutter Weather App" class="project-card-image">
-                <div class="project-card-content">
-                    <h3>Minimalist Weather App</h3>
-                    <p>A clean weather application that provides real-time forecasts using the OpenWeatherMap API. Features a sleek UI with custom animations.</p>
-                    <a href="#" class="btn">View on GitHub &rarr;</a>
-                </div>
-            </div>
-            <!-- Project Card 3 -->
-            <div class="project-card">
-                <img src="https://placehold.co/400x400/1e1e1e/42a5f5?text=E-Commerce+UI" alt="Flutter E-Commerce UI" class="project-card-image">
-                <div class="project-card-content">
-                    <h3>E-Commerce UI Kit</h3>
-                    <p>A beautiful and responsive user interface kit for an online shopping application. Includes product pages, shopping cart, and checkout flow.</p>
-                    <a href="#" class="btn">View on GitHub &rarr;</a>
-                </div>
-            </div>
-             <!-- Project Card 4 -->
-            <div class="project-card">
-                <img src="https://placehold.co/400x400/1e1e1e/42a5f5?text=Recipe+Finder" alt="Flutter Recipe Finder" class="project-card-image">
-                <div class="project-card-content">
-                    <h3>Recipe Finder App</h3>
-                    <p>An app that helps users discover new recipes based on ingredients they have. Integrated with a recipe API and local database for saving favorites.</p>
-                    <a href="#" class="btn">View on GitHub &rarr;</a>
-                </div>
-            </div>
-             <!-- Project Card 5 -->
-            <div class="project-card">
-                <img src="https://placehold.co/400x400/1e1e1e/42a5f5?text=Chat+App" alt="Flutter Chat App" class="project-card-image">
-                <div class="project-card-content">
-                    <h3>Real-time Chat App</h3>
-                    <p>A messaging application built with Flutter and Firebase, featuring real-time message updates, user authentication, and push notifications.</p>
-                    <a href="#" class="btn">View on GitHub &rarr;</a>
-                </div>
-            </div>
-             <!-- Project Card 6 -->
-            <div class="project-card">
-                <img src="https://placehold.co/400x400/1e1e1e/42a5f5?text=Music+Player" alt="Flutter Music Player" class="project-card-image">
-                <div class="project-card-content">
-                    <h3>Music Player UI</h3>
-                    <p>A concept for a stylish music player app with complex UI elements, animations, and controls for playback, playlists, and album views.</p>
-                    <a href="#" class="btn">View on GitHub &rarr;</a>
-                </div>
-            </div>
+    <div id="content-container">
+      <section id="toolkit">
+        <h2 class="section-title">Core Technologies</h2>
+        <div class="toolkit-grid">
+          <div class="toolkit-item">
+            <i class="fab fa-react"></i>
+            <h3>Frontend</h3>
+            <p>
+              React, Next.js, Vue.js, Svelte, JavaScript, TypeScript, HTML5,
+              CSS3/Sass
+            </p>
+          </div>
+          <div class="toolkit-item">
+            <i class="fab fa-node-js"></i>
+            <h3>Backend</h3>
+            <p>Node.js, Express, Python, Django, REST APIs, GraphQL</p>
+          </div>
+          <div class="toolkit-item">
+            <i class="fas fa-database"></i>
+            <h3>Databases</h3>
+            <p>MongoDB, PostgreSQL, MySQL, Firebase, Redis</p>
+          </div>
+          <div class="toolkit-item">
+            <i class="fas fa-server"></i>
+            <h3>DevOps & Tools</h3>
+            <p>Docker, AWS, Vercel, Git, Webpack, Nginx</p>
+          </div>
         </div>
-    </main>
-      <section id="contact" class="contact-section">
-    <h2>Contact Me</h2>
-    <p>Let's connect! You can reach me here:</p>
+      </section>
 
-    <div class="social-links">
-      <a href="mailto:adeelabbasipersonal@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
-      <a href="https://www.linkedin.com/in/adeelabbasi111/" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/adeelabbasi111" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://wa.me/923215773211" target="_blank"><i class="fab fa-whatsapp"></i></a>
-      <a href="https://www.instagram.com/adeelabbasi111" target="_blank"><i class="fab fa-instagram"></i></a>
+      <section id="showcase">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="project-stack">
+          <div class="project-card">
+            <div class="project-video-wrapper">
+              <video src="videos/project1.mp4" muted loop playsinline></video>
+            </div>
+            <div class="project-content">
+              <span class="project-number">01</span>
+              <h3 class="project-title">E-Commerce Platform</h3>
+              <p class="project-description">
+                A full-stack e-commerce site with real-time inventory and Stripe
+                integration.
+              </p>
+              <div class="project-links">
+                <a href="#" target="_blank"
+                  >Live Site <i class="fas fa-external-link-alt"></i
+                ></a>
+                <a href="#" target="_blank"
+                  >GitHub <i class="fab fa-github"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-video-wrapper">
+              <video src="videos/project2.mp4" muted loop playsinline></video>
+            </div>
+            <div class="project-content">
+              <span class="project-number">02</span>
+              <h3 class="project-title">Real-Time Chat App</h3>
+              <p class="project-description">
+                A WebSocket-powered chat application for instant user
+                communication.
+              </p>
+              <div class="project-links">
+                <a href="#" target="_blank"
+                  >Live Site <i class="fas fa-external-link-alt"></i
+                ></a>
+                <a href="#" target="_blank"
+                  >GitHub <i class="fab fa-github"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-video-wrapper">
+              <video src="videos/project3.mp4" muted loop playsinline></video>
+            </div>
+            <div class="project-content">
+              <span class="project-number">03</span>
+              <h3 class="project-title">Data Visualization Dashboard</h3>
+              <p class="project-description">
+                An interactive dashboard for visualizing complex data sets using
+                D3.js and React.
+              </p>
+              <div class="project-links">
+                <a href="#" target="_blank"
+                  >Live Site <i class="fas fa-external-link-alt"></i
+                ></a>
+                <a href="#" target="_blank"
+                  >GitHub <i class="fab fa-github"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="container">
+          <h2 class="section-title">Get In Touch</h2>
+          <p class="contact-subtitle">
+            Have a project in mind? Let's build something extraordinary
+            together.
+          </p>
+          <div class="contact-links">
+            <a href="mailto:adeelabbasipersonal@gmail.com" class="magnetic-btn"
+              ><i class="fas fa-envelope"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/adeelabbasi111/"
+              target="_blank"
+              class="magnetic-btn"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <a
+              href="https://github.com/adeelabbasi111"
+              target="_blank"
+              class="magnetic-btn"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a
+              href="https://wa.me/923215773211"
+              target="_blank"
+              class="magnetic-btn"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/adeelabbasi111"
+              target="_blank"
+              class="magnetic-btn"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <p>
+          © <span id="current-year"></span> Adeel Abbasi. Architected with
+          passion.
+        </p>
+      </footer>
     </div>
-  </section>
-    
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; <span id="current-year"></span> Your Name. All Rights Reserved.</p>
-    </footer>
 
-    <!-- JavaScript for animations -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Set current year in the footer
-            document.getElementById('current-year').textContent = new Date().getFullYear();
-
-            // Animate cards on scroll
-            const cards = document.querySelectorAll('.project-card');
-
-            // The Intersection Observer API is a modern, efficient way to handle scroll animations
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry, index) => {
-                    if (entry.isIntersecting) {
-                        // Add a delay for each card to create a staggered effect
-                        setTimeout(() => {
-                            entry.target.classList.add('is-visible');
-                        }, index * 100); 
-                        
-                        // Stop observing the card once it's visible to save resources
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.1 // Trigger when 10% of the card is visible
-            });
-
-            // Tell the observer to watch each card
-            cards.forEach(card => {
-                observer.observe(card);
-            });
-        });
-    </script>
-</body>
+    <script src="web.js"></script>
+  </body>
 </html>

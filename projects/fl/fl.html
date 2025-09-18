@@ -1,216 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="../../style.css">
+    <title>Adeel Abbasi | Music Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+    
+    <script src="https://kit.fontawesome.com/ec5546d54a.js" crossorigin="anonymous"></script>
+    
+    <script src="https://unpkg.com/wavesurfer.js@7"></script>
+
     <link rel="stylesheet" href="fl.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playwrite+AU+QLD&display=swap"
-      rel="stylesheet"
-    />
-    <script
-      src="https://kit.fontawesome.com/ec5546d54a.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://unpkg.com/wavesurfer.js"></script>
-  </head>
-  <body>
-    <div class="intro">
-      <div class="hero">
-        <h1>My Rap Songs</h1>
-      </div>
-      <p class="description">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio voluptas
-        quis, commodi inventore eius quibusdam iste quo molestiae minima facere?
-      </p>
-    </div>
+</head>
+<body>
 
-    <div class="songs">
-      <div class="song-card">
-        <h3>Hackathon</h3>
-        <img src="images/hackathon.jpg" alt="" />
-
-        <div id="hackathon" class="wave"></div>
-
-        <div class="controls">
-          <div class="playbtn"><i class="fa-solid fa-circle-play"></i></div>
-          <div class="pausebtn hidden">
-            <i class="fa-solid fa-circle-pause"></i>
-          </div>
-          <div id="time-display">
-            <span id="current-time">00:00</span> /
-            <span id="total-time">00:00</span>
-          </div>
+    <header id="hero-music">
+        <video autoplay muted loop class="hero-video">
+            <source src="videos/background.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>The Discography</h1>
+            <p>Creative beats and lyrical journeys. Press play and dive in.</p>
         </div>
-      </div>
-      <div class="song-card">
-        <h3>Pankchi</h3>
-        <img src="images/pankchi.jpg" alt="" />
+    </header>
 
-        <div id="pankchi" class="wave"></div>
-
-        <div class="controls">
-          <div class="playbtn"><i class="fa-solid fa-circle-play"></i></div>
-          <div class="pausebtn hidden">
-            <i class="fa-solid fa-circle-pause"></i>
-          </div>
-          <div id="time-display">
-            <span id="current-time">00:00</span> /
-            <span id="total-time">00:00</span>
-          </div>
+    <main id="music-player">
+        <div class="now-playing-container">
+            <img src="images/hackathon.jpg" alt="Current Album Art" id="current-album-art" />
+            <div class="track-info">
+                <h2 id="current-track-title">Hackathon</h2>
+                <p>Adeel Abbasi</p>
+            </div>
         </div>
-      </div>
-      <div class="song-card">
-        <h3>Ashquie</h3>
-        <img src="images/ashquie.jpg" alt="" />
 
-        <div id="ashquie" class="wave"></div>
-
-        <div class="controls">
-          <div class="playbtn"><i class="fa-solid fa-circle-play"></i></div>
-          <div class="pausebtn hidden">
-            <i class="fa-solid fa-circle-pause"></i>
-          </div>
-          <div id="time-display">
-            <span id="current-time">00:00</span> /
-            <span id="total-time">00:00</span>
-          </div>
+        <div class="player-controls">
+            <div id="main-waveform"></div>
+            <div class="controls-wrapper">
+                <button id="play-pause-btn" class="control-btn">
+                    <i class="fas fa-play"></i>
+                </button>
+                <div class="time-display">
+                    <span id="current-time">0:00</span>
+                    <span class="divider">/</span>
+                    <span id="total-time">0:00</span>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="song-card">
-        <h3>Badday</h3>
-        <img src="images/badday.jpg" alt="" />
 
-        <div id="badday" class="wave"></div>
-
-        <div class="controls">
-          <div class="playbtn"><i class="fa-solid fa-circle-play"></i></div>
-          <div class="pausebtn hidden">
-            <i class="fa-solid fa-circle-pause"></i>
-          </div>
-          <div id="time-display">
-            <span id="current-time">00:00</span> /
-            <span id="total-time">00:00</span>
-          </div>
+        <div class="track-carousel-wrapper">
+            <h3>All Tracks</h3>
+            <div class="track-carousel" id="track-carousel">
+                </div>
         </div>
-      </div>
+    </main>
 
-      <div class="song-card">
-        <h3>IDGAF</h3>
-        <img src="images/idgaf.jpg" alt="" />
-
-        <div id="idgaf" class="wave"></div>
-
-        <div class="controls">
-          <div class="playbtn"><i class="fa-solid fa-circle-play"></i></div>
-          <div class="pausebtn hidden">
-            <i class="fa-solid fa-circle-pause"></i>
-          </div>
-          <div id="time-display">
-            <span id="current-time">00:00</span> /
-            <span id="total-time">00:00</span>
-          </div>
-        </div>
-      </div>
-      <div class="song-card">
-        <h3>King Kon</h3>
-        <img src="images/king-kon.jpg" alt="" />
-
-        <div id="king-kon" class="wave"></div>
-
-        <div class="controls">
-          <div class="playbtn"><i class="fa-solid fa-circle-play"></i></div>
-          <div class="pausebtn hidden">
-            <i class="fa-solid fa-circle-pause"></i>
-          </div>
-          <div id="time-display">
-            <span id="current-time">00:00</span> /
-            <span id="total-time">00:00</span>
-          </div>
-        </div>
-      </div>
-      <div class="song-card">
-        <h3>Nadan</h3>
-        <img src="images/nadan.jpg" alt="" />
-
-        <div id="nadan" class="wave"></div>
-
-        <div class="controls">
-          <div class="playbtn"><i class="fa-solid fa-circle-play"></i></div>
-          <div class="pausebtn hidden">
-            <i class="fa-solid fa-circle-pause"></i>
-          </div>
-          <div id="time-display">
-            <span id="current-time">00:00</span> /
-            <span id="total-time">00:00</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="song-card">
-        <h3>Snake</h3>
-        <img src="images/snake.jpg" alt="" />
-
-        <div id="snake" class="wave"></div>
-
-        <div class="controls">
-          <div class="playbtn"><i class="fa-solid fa-circle-play"></i></div>
-          <div class="pausebtn hidden">
-            <i class="fa-solid fa-circle-pause"></i>
-          </div>
-          <div id="time-display">
-            <span id="current-time">00:00</span> /
-            <span id="total-time">00:00</span>
-          </div>
-        </div>
-      </div>
-      <div class="song-card">
-        <h3>Tarah</h3>
-        <img src="images/tarah.jpg" alt="" />
-
-        <div id="tarah" class="wave"></div>
-
-        <div class="controls">
-          <div class="playbtn"><i class="fa-solid fa-circle-play"></i></div>
-          <div class="pausebtn hidden">
-            <i class="fa-solid fa-circle-pause"></i>
-          </div>
-          <div id="time-display">
-            <span id="current-time">00:00</span> /
-            <span id="total-time">00:00</span>
-          </div>
-        </div>
-      </div>
-    </div>
     <section id="contact" class="contact-section">
-  <h2>Contact Me</h2>
-  <p>Let's connect! You can reach me here:</p>
+      <h2>Contact Me</h2>
+      <div class="social-links">
+        <a href="mailto:adeelabbasipersonal@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/adeelabbasi111/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/adeelabbasi111" target="_blank"><i class="fab fa-github"></i></a>
+      </div>
+    </section>
 
-  <div class="social-links">
-    <a href="mailto:adeelabbasipersonal@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
-    <a href="https://www.linkedin.com/in/adeelabbasi111/" target="_blank"><i class="fab fa-linkedin"></i></a>
-    <a href="https://github.com/adeelabbasi111" target="_blank"><i class="fab fa-github"></i></a>
-    <a href="https://wa.me/923215773211" target="_blank"><i class="fab fa-whatsapp"></i></a>
-    <a href="https://www.instagram.com/adeelabbasi111" target="_blank"><i class="fab fa-instagram"></i></a>
-  </div>
-</section>
+    <footer>
+      <p>© <span id="current-year"></span> Adeel Abbasi. All Rights Reserved.</p>
+    </footer>
 
-<!-- Footer -->
-<footer>
-  <p>© 2025 Adeel Abbaasi. All Rights Reserved.</p>
-</footer>
     <script src="fl.js" type="module"></script>
-  </body>
+</body>
 </html>

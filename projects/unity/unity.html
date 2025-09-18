@@ -1,138 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>My Flutter Portfolio</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adeel Abbasi | Unity Game Development</title>
 
-  <link rel="stylesheet" href="../../style.css">
-  <link rel="stylesheet" href="flutter.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Playwrite+AU+QLD&display=swap" rel="stylesheet" />
-  <script src="https://kit.fontawesome.com/ec5546d54a.js" crossorigin="anonymous"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Google Fonts (Press Start 2P for gaming feel) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Press+Start+2P&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <script src="https://kit.fontawesome.com/ec5546d54a.js" crossorigin="anonymous"></script>
 
+    <!-- New Stylesheet -->
+    <link rel="stylesheet" href="unity.css" />
 </head>
 <body>
 
-    <!-- Header Section -->
-    <header class="header container">
-        <h1>My <span class="animated-gradient-text">Flutter </span><span class="hollow">Projects</span></h1>
-        <p>A curated collection of my work, showcasing mobile applications built with Flutter and Dart.</p>
-    </header>
-
-    <!-- Main Content -->
-    <main class="container">
-        <div class="projects-grid">
-            <!-- Project Card 1 -->
-            <div class="project-card">
-                <img src="https://placehold.co/400x400/1e1e1e/42a5f5?text=Finance+App" alt="Flutter Finance App" class="project-card-image">
-                <div class="project-card-content">
-                    <h3>Finance & Budgeting App</h3>
-                    <p>A mobile app to track expenses, manage budgets, and visualize spending habits with interactive charts. Built with Flutter and Provider for state management.</p>
-                    <a href="#" class="btn">View on GitHub &rarr;</a>
-                </div>
-            </div>
-            <!-- Project Card 2 -->
-            <div class="project-card">
-                <img src="https://placehold.co/400x400/1e1e1e/42a5f5?text=Weather+App" alt="Flutter Weather App" class="project-card-image">
-                <div class="project-card-content">
-                    <h3>Minimalist Weather App</h3>
-                    <p>A clean weather application that provides real-time forecasts using the OpenWeatherMap API. Features a sleek UI with custom animations.</p>
-                    <a href="#" class="btn">View on GitHub &rarr;</a>
-                </div>
-            </div>
-            <!-- Project Card 3 -->
-            <div class="project-card">
-                <img src="https://placehold.co/400x400/1e1e1e/42a5f5?text=E-Commerce+UI" alt="Flutter E-Commerce UI" class="project-card-image">
-                <div class="project-card-content">
-                    <h3>E-Commerce UI Kit</h3>
-                    <p>A beautiful and responsive user interface kit for an online shopping application. Includes product pages, shopping cart, and checkout flow.</p>
-                    <a href="#" class="btn">View on GitHub &rarr;</a>
-                </div>
-            </div>
-             <!-- Project Card 4 -->
-            <div class="project-card">
-                <img src="https://placehold.co/400x400/1e1e1e/42a5f5?text=Recipe+Finder" alt="Flutter Recipe Finder" class="project-card-image">
-                <div class="project-card-content">
-                    <h3>Recipe Finder App</h3>
-                    <p>An app that helps users discover new recipes based on ingredients they have. Integrated with a recipe API and local database for saving favorites.</p>
-                    <a href="#" class="btn">View on GitHub &rarr;</a>
-                </div>
-            </div>
-             <!-- Project Card 5 -->
-            <div class="project-card">
-                <img src="https://placehold.co/400x400/1e1e1e/42a5f5?text=Chat+App" alt="Flutter Chat App" class="project-card-image">
-                <div class="project-card-content">
-                    <h3>Real-time Chat App</h3>
-                    <p>A messaging application built with Flutter and Firebase, featuring real-time message updates, user authentication, and push notifications.</p>
-                    <a href="#" class="btn">View on GitHub &rarr;</a>
-                </div>
-            </div>
-             <!-- Project Card 6 -->
-            <div class="project-card">
-                <img src="https://placehold.co/400x400/1e1e1e/42a5f5?text=Music+Player" alt="Flutter Music Player" class="project-card-image">
-                <div class="project-card-content">
-                    <h3>Music Player UI</h3>
-                    <p>A concept for a stylish music player app with complex UI elements, animations, and controls for playback, playlists, and album views.</p>
-                    <a href="#" class="btn">View on GitHub &rarr;</a>
-                </div>
+    <!-- ===== LOADING SCREEN ===== -->
+    <div id="loader">
+        <div class="loader-content">
+            <div class="loader-logo">[AA]</div>
+            <p>LOADING ASSETS...</p>
+            <div class="progress-bar">
+                <div class="progress"></div>
             </div>
         </div>
-    </main>
-      <section id="contact" class="contact-section">
-    <h2>Contact Me</h2>
-    <p>Let's connect! You can reach me here:</p>
-
-    <div class="social-links">
-      <a href="mailto:adeelabbasipersonal@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
-      <a href="https://www.linkedin.com/in/adeelabbasi111/" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/adeelabbasi111" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://wa.me/923215773211" target="_blank"><i class="fab fa-whatsapp"></i></a>
-      <a href="https://www.instagram.com/adeelabbasi111" target="_blank"><i class="fab fa-instagram"></i></a>
     </div>
-  </section>
-    
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; <span id="current-year"></span> Your Name. All Rights Reserved.</p>
+
+    <!-- ===== UI OVERLAY / HUD ===== -->
+    <div class="hud-overlay">
+        <div class="hud-top-left">[ADEEL ABBASI // GAME DEV]</div>
+        <div class="hud-bottom-right">STATUS: ONLINE</div>
+    </div>
+
+    <!-- ===== HERO SECTION / 3D SCENE ===== -->
+    <header id="hero-unity">
+        <div id="threejs-canvas"></div> <!-- 3D scene will be rendered here -->
+        <div class="hero-content">
+            <h1>ADEEL ABBASI</h1>
+            <p>UNITY GAME DEVELOPER</p>
+        </div>
+    </header>
+
+    <!-- ===== SKILLS SECTION / SKILL TREE ===== -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">- SKILL TREE -</h2>
+            <div class="skill-grid">
+                <div class="skill-item"><i class="fab fa-unity"></i><span>Unity Engine</span></div>
+                <div class="skill-item"><span>C#</span></div>
+                <div class="skill-item"><i class="fas fa-cube"></i><span>Blender</span></div>
+                <div class="skill-item"><i class="fas fa-vr-cardboard"></i><span>VR/AR Dev</span></div>
+                <div class="skill-item"><i class="fas fa-mobile-alt"></i><span>Mobile Games</span></div>
+                <div class="skill-item"><i class="fas fa-gamepad"></i><span>Gameplay Mechanics</span></div>
+                <div class="skill-item"><i class="fas fa-users"></i><span>Multiplayer</span></div>
+                <div class="skill-item"><i class="fas fa-robot"></i><span>AI Programming</span></div>
+                <div class="skill-item"><i class="fas fa-paint-brush"></i><span>Shader Graph</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROJECTS SECTION / MISSION SELECT ===== -->
+    <section id="missions">
+        <div class="container">
+            <h2 class="section-title">- MISSION SELECT -</h2>
+            <div class="mission-grid">
+                
+                <!-- Mission 1 -->
+                <div class="mission-card">
+                    <video src="videos/game1.mp4" class="mission-video" muted loop playsinline></video>
+                    <div class="mission-overlay">
+                        <h3>Project: Rogue Lite</h3>
+                        <p class="mission-briefing">A fast-paced 2D rogue-lite dungeon crawler with procedural level generation.</p>
+                        <div class="mission-objectives">
+                            <span>Unity</span><span>C#</span><span>A* Pathfinding</span>
+                        </div>
+                        <a href="#" target="_blank" class="btn-launch">LAUNCH MISSION <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+                <!-- Mission 2 -->
+                <div class="mission-card">
+                    <video src="videos/game2.mp4" class="mission-video" muted loop playsinline></video>
+                    <div class="mission-overlay">
+                        <h3>Project: VR Archery</h3>
+                        <p class="mission-briefing">An immersive VR archery simulation game for the Oculus Quest 2.</p>
+                        <div class="mission-objectives">
+                            <span>Unity</span><span>VR</span><span>Physics</span>
+                        </div>
+                        <a href="#" target="_blank" class="btn-launch">LAUNCH MISSION <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT & FOOTER ===== -->
+     <section id="contact">
+        <h2 class="section-title">- CONTACT -</h2>
+        <div class="social-links">
+            <a href="mailto:adeelabbasipersonal@gmail.com" class="btn-social"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/adeelabbasi111/" target="_blank" class="btn-social"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/adeelabbasi111" target="_blank" class="btn-social"><i class="fab fa-github"></i></a>
+        </div>
+    </section>
+
+    <footer>
+        <p>A. Abbasi © <span id="current-year"></span> // All Rights Reserved</p>
     </footer>
 
-    <!-- JavaScript for animations -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Set current year in the footer
-            document.getElementById('current-year').textContent = new Date().getFullYear();
-
-            // Animate cards on scroll
-            const cards = document.querySelectorAll('.project-card');
-
-            // The Intersection Observer API is a modern, efficient way to handle scroll animations
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry, index) => {
-                    if (entry.isIntersecting) {
-                        // Add a delay for each card to create a staggered effect
-                        setTimeout(() => {
-                            entry.target.classList.add('is-visible');
-                        }, index * 100); 
-                        
-                        // Stop observing the card once it's visible to save resources
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.1 // Trigger when 10% of the card is visible
-            });
-
-            // Tell the observer to watch each card
-            cards.forEach(card => {
-                observer.observe(card);
-            });
-        });
-    </script>
+    <!-- JS Libraries: three.js for 3D, Tone.js for sound -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js"></script>
+    
+    <!-- New JavaScript File -->
+    <script src="unity.js"></script>
 </body>
 </html>

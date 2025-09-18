@@ -147,6 +147,7 @@ body {
 .service-item.right {
   left: 50%;
     z-index: 10;
+    transform: translateX(30px);
 }
 
 /* This class is added by JS on scroll */

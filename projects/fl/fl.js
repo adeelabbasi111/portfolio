@@ -1,90 +1,114 @@
+document.addEventListener("DOMContentLoaded", () => {
+    // --- 1. DATA: Define all your tracks here ---
+    const tracks = [
+        { id: 'hackathon', title: 'Hackathon', imageSrc: 'images/hackathon.jpg', audioSrc: 'audio/hackathon.mp3' },
+        { id: 'pankchi', title: 'Pankchi', imageSrc: 'images/pankchi.jpg', audioSrc: 'audio/pankchi.mp3' },
+        { id: 'ashquie', title: 'Ashquie', imageSrc: 'images/ashquie.jpg', audioSrc: 'audio/ashquie.mp3' },
+        { id: 'badday', title: 'Badday', imageSrc: 'images/badday.jpg', audioSrc: 'audio/badday.mp3' },
+        { id: 'idgaf', title: 'IDGAF', imageSrc: 'images/idgaf.jpg', audioSrc: 'audio/idgaf.mp3' },
+        { id: 'king-kon', title: 'King Kon', imageSrc: 'images/king-kon.jpg', audioSrc: 'audio/king-kon.mp3' },
+        { id: 'nadan', title: 'Nadan', imageSrc: 'images/nadan.jpg', audioSrc: 'audio/nadan.mp3' },
+        { id: 'snake', title: 'Snake', imageSrc: 'images/snake.jpg', audioSrc: 'audio/snake.mp3' },
+        { id: 'tarah', title: 'Tarah', imageSrc: 'images/tarah.jpg', audioSrc: 'audio/tarah.mp3' },
+    ];
 
-const options = {
-  container: "#tarah",
-  height: 50,
-  width: 250,
-  waveColor: "#707070ff",
-  progressColor: "#f0a61eff",
-  cursorColor: "#2df8ffff",
-  cursorWidth: 2,
-  barWidth: 3,
-  barGap: NaN,
-  barRadius: 20,
-  barAlign: "",
-  fillParent: true,
-  url: "audio/tarah.mp3",
-  mediaControls: false,
-  interact: true,
-  dragToSeek: true,
-  hideScrollbar: true,
-  audioRate: 1,
-  autoScroll: true,
-  autoCenter: true,
-  sampleRate: 8000,
-};
+    // --- 2. DOM Elements ---
+    const carousel = document.getElementById('track-carousel');
+    const albumArt = document.getElementById('current-album-art');
+    const trackTitle = document.getElementById('current-track-title');
+    const playPauseBtn = document.getElementById('play-pause-btn');
+    const currentTimeEl = document.getElementById('current-time');
+    const totalTimeEl = document.getElementById('total-time');
 
-function formatTime(sec) {
-  const minutes = Math.floor(sec / 60);
-  const seconds = Math.floor(sec % 60);
-  return (
-    String(minutes).padStart(2, "0") + ":" + String(seconds).padStart(2, "0")
-  );
-}
+    let activeTrackElement = null;
 
-var wavesurfers = [];
+    // --- 3. Initialize WaveSurfer ---
+    const wavesurfer = WaveSurfer.create({
+        container: '#main-waveform',
+        waveColor: 'rgba(164, 156, 201, 0.5)',
+        progressColor: '#00f2ea', // Neon Cyan
+        cursorColor: '#ff00e6',   // Electric Magenta
+        barWidth: 3,
+        barRadius: 3,
+        barGap: 2,
+        height: 80,
+        responsive: true,
+    });
 
-document.querySelectorAll(".wave").forEach((el) => {
-  const id = el.id;
-  const wavesurfer = WaveSurfer.create({
-    ...options,
-    container: `#${id}`,
-    url: `audio/${id}.mp3`,
-  });
+    // --- 4. Core Player Functions ---
+    const formatTime = (seconds) => {
+        const minutes = Math.floor(seconds / 60);
+        const secs = Math.floor(seconds % 60);
+        return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+    };
 
-  wavesurfers.push(wavesurfer);
+    const loadTrack = (track) => {
+        // Update UI
+        albumArt.style.opacity = 0;
+        albumArt.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            albumArt.src = track.imageSrc;
+            trackTitle.textContent = track.title;
+            albumArt.style.opacity = 1;
+            albumArt.style.transform = 'scale(1)';
+        }, 300);
 
-  wavesurfer.on("ready", () => {
-    el.closest(".song-card").querySelector("#total-time").textContent =
-      formatTime(wavesurfer.getDuration());
-  });
+        // Load and play audio
+        wavesurfer.load(track.audioSrc);
+        wavesurfer.once('ready', () => {
+            totalTimeEl.textContent = formatTime(wavesurfer.getDuration());
+            wavesurfer.play();
+        });
 
-  wavesurfer.on("audioprocess", () => {
-    el.closest(".song-card").querySelector("#current-time").textContent =
-      formatTime(wavesurfer.getCurrentTime());
-  });
+        // Update active state in carousel
+        if (activeTrackElement) {
+            activeTrackElement.classList.remove('active');
+        }
+        activeTrackElement = document.querySelector(`[data-id="${track.id}"]`);
+        activeTrackElement.classList.add('active');
+    };
 
-  wavesurfer.on("complete", () => {
-    el.closest(".song-card").querySelector("#current-time").textContent =
-      formatTime(0);
-  });
-  // Find play/pause buttons inside this song-card only
-  const card = el.closest(".song-card");
-  const playBtn = card.querySelector(".playbtn");
-  const pauseBtn = card.querySelector(".pausebtn");
+    // --- 5. Event Listeners ---
+    wavesurfer.on('audioprocess', () => {
+        currentTimeEl.textContent = formatTime(wavesurfer.getCurrentTime());
+    });
 
-  playBtn.addEventListener("click", function () {
-    PauseAll();
-    wavesurfer.playPause();
-    playBtn.classList.toggle("hidden");
-    pauseBtn.classList.toggle("hidden");
-  });
-
-  pauseBtn.addEventListener("click", function () {
-    wavesurfer.playPause();
-    pauseBtn.classList.toggle("hidden");
-    playBtn.classList.toggle("hidden");
-  });
-});
-
-function PauseAll(){
-  $(".playbtn").removeClass("hidden");
-  $(".pausebtn").addClass("hidden");
-  for (let i = 0; i < wavesurfers.length; i++) {
-    if(wavesurfers[i].isPlaying()){
-      wavesurfers[i].pause();
+    wavesurfer.on('finish', () => {
+        playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+    });
     
-  }
-}
-}
+    wavesurfer.on('play', () => {
+        playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+    });
 
+    wavesurfer.on('pause', () => {
+        playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+    });
 
+    playPauseBtn.addEventListener('click', () => {
+        wavesurfer.playPause();
+    });
+
+    // --- 6. Build UI and Initialize ---
+    tracks.forEach(track => {
+        const trackEl = document.createElement('div');
+        trackEl.className = 'track-item';
+        trackEl.dataset.id = track.id;
+        trackEl.innerHTML = `<img src="${track.imageSrc}" alt="${track.title}">`;
+        
+        trackEl.addEventListener('click', () => loadTrack(track));
+        carousel.appendChild(trackEl);
+    });
+
+    // Load the first track automatically
+    if (tracks.length > 0) {
+        loadTrack(tracks[0]);
+        wavesurfer.pause(); // Start in a paused state
+    }
+    
+    // Set current year in footer
+    const currentYearEl = document.getElementById("current-year");
+    if (currentYearEl) {
+        currentYearEl.textContent = new Date().getFullYear();
+    }
+});
